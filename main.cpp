@@ -15,7 +15,11 @@ int main()
 
 	cout << "\nNumber of items in the linked list = " << MyList.Size();
 
-	cout << "\nlist is " << (MyList.IsEmpty() ? "" : " not ") << "empty!";
+	cout << "\nafter executing clear : ";
+	MyList.Clear();
+	MyList.PrintList();
+
+
 
 	system("pause>0");
 	return 0;

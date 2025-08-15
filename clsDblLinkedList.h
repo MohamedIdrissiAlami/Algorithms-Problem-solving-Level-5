@@ -133,6 +133,8 @@ public:
 	void PrintList()
 	{
 		Node* Current = Head;
+		if (Head == nullptr)
+			cout << "\nempty list!";
 		while (Current != nullptr)
 		{
 			cout << Current->Value << " ";
@@ -148,6 +150,12 @@ public:
 	bool IsEmpty()
 	{
 		return this->_Size == 0;
+	}
+
+	void Clear()
+	{
+		while (_Size > 0)
+			DeleteLastNode();
 	}
 };
 

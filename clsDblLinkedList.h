@@ -144,5 +144,10 @@ public:
 	{
 		return this->_Size;
 	}
+
+	bool IsEmpty()
+	{
+		return this->_Size == 0;
+	}
 };
 

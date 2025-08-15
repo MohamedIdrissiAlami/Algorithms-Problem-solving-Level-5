@@ -13,13 +13,12 @@ int main()
 	cout << "\nLinked list content : \n";
 	MyList.PrintList();
 
-	clsDblLinkedList<int>::Node* N1 = MyList.Find(600);
-	if (N1 != nullptr)
-	{
-		cout << "\nfound! :-)";
-	}
-	else
-		cout << "\nnot found :-(";
+	cout << "\n----\n";
+	clsDblLinkedList<int>::Node* N1 = MyList.Find(3);
+	MyList.InsertAfter(N1, 702);
+	cout << "\nLinked list content : \n";
+	MyList.PrintList();
+
 	system("pause>0");
 	return 0;
 }

@@ -59,6 +59,20 @@ public:
 		return nullptr;
 	}
 
+	void InsertAfter(Node* Current, T Value)
+	{
+		if (Head == nullptr || Current == nullptr)
+			return;
+		Node* NewNode = new Node();
+		NewNode->Value = Value;
+		NewNode->Next = Current->Next;
+		NewNode->Prev = Current;
+		if (Current->Next != nullptr)
+			Current->Next->Prev = NewNode;
+		Current->Next = NewNode;
+	}
+
+
 	void PrintList()
 	{
 		Node* Current = Head;

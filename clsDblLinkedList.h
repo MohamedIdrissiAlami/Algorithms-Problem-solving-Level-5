@@ -104,6 +104,23 @@ public:
 		}
 	}
 
+	void DeleteNode(Node* NodeToDelete)
+	{
+		if (Head == nullptr || NodeToDelete == nullptr)
+			return;
+		if (NodeToDelete->Prev != nullptr)
+			NodeToDelete->Prev->Next = NodeToDelete->Next;
+		else
+		{
+			NodeToDelete->Next->Prev = nullptr;
+			Head = NodeToDelete->Next;
+		}
+		if (NodeToDelete->Next != nullptr)
+			NodeToDelete->Next->Prev = NodeToDelete->Prev;
+
+		delete NodeToDelete;
+	}
+
 	void PrintList()
 	{
 		Node* Current = Head;

@@ -3,7 +3,6 @@
 int main()
 {
 	clsDblLinkedList<int> MyList;
-	MyList.DeleteLastNode();
 	MyList.InsertAtBeginning(5);
 	MyList.InsertAtBeginning(4);
 	MyList.InsertAtBeginning(3);
@@ -11,7 +10,8 @@ int main()
 	MyList.InsertAtBeginning(1);
 	MyList.InsertAtEnd(600);
 
-	MyList.DeleteLastNode();
+	clsDblLinkedList<int>::Node* N1 = MyList.Find(6300);
+	MyList.DeleteNode(N1);
 	cout << "\nLinked list content : \n";
 	MyList.PrintList();
 

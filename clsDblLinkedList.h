@@ -86,6 +86,23 @@ public:
 		}
 	}
 
+	void DeleteLastNode()
+	{
+		if (Head != nullptr)
+		{
+			Node* LastNode = Head;
+			
+			while (LastNode->Next != nullptr)
+				LastNode = LastNode->Next;
+			
+			if (LastNode->Prev != nullptr)
+				LastNode->Prev->Next = nullptr;
+			else
+				Head = nullptr;
+			
+			delete LastNode;
+		}
+	}
 
 	void PrintList()
 	{

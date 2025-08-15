@@ -174,5 +174,22 @@ public:
 			Head = temp->Prev;
 		}
 	}
+
+	Node* GetNode(short Index)
+	{
+		if (Index >= 0 && Index < _Size)
+		{
+			short CurrentIndex = 0;
+			Node* Current = Head;
+			while (Current != nullptr)
+			{
+				if (CurrentIndex++ == Index)
+					return Current;
+				Current = Current->Next;
+			}
+
+		}
+		return nullptr;
+	}
 };
 

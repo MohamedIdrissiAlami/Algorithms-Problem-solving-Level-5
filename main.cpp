@@ -15,10 +15,11 @@ int main()
 
 	cout << "\nNumber of items in the linked list = " << MyList.Size();
 
-	cout << "\nafter executing reverse : ";
-	MyList.Reverse();
-	MyList.PrintList();
-
+	clsDblLinkedList<int>::Node* N1 = MyList.GetNode(5);
+	if (N1 != nullptr)
+	{
+		cout << "\nitem value is : " << N1->Value;
+	}
 
 
 	system("pause>0");

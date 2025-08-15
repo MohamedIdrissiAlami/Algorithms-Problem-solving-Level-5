@@ -3,7 +3,6 @@
 int main()
 {
 	clsDblLinkedList<int> MyList;
-	MyList.InsertAtEnd(500);
 	MyList.InsertAtBeginning(5);
 	MyList.InsertAtBeginning(4);
 	MyList.InsertAtBeginning(3);
@@ -13,6 +12,14 @@ int main()
 
 	cout << "\nLinked list content : \n";
 	MyList.PrintList();
+
+	clsDblLinkedList<int>::Node* N1 = MyList.Find(600);
+	if (N1 != nullptr)
+	{
+		cout << "\nfound! :-)";
+	}
+	else
+		cout << "\nnot found :-(";
 	system("pause>0");
 	return 0;
 }

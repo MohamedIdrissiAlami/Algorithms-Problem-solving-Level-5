@@ -46,6 +46,19 @@ public:
 		NewNode->Prev = LastNode;
 	}
 
+	Node* Find(T Value)
+	{
+		if (Head != nullptr)
+		{
+			Node* Current = Head;
+			while (Current != nullptr && Current->Value != Value)
+				Current = Current->Next;
+			if (Current != nullptr)
+				return Current;
+		}
+		return nullptr;
+	}
+
 	void PrintList()
 	{
 		Node* Current = Head;

@@ -72,6 +72,20 @@ public:
 		Current->Next = NewNode;
 	}
 
+	void DeleteFirstNode()
+	{
+		if (Head != nullptr)
+		{
+			Node* FirstNode = Head;
+			Head = Head->Next;
+
+			if (Head != nullptr)
+				Head->Prev = nullptr;
+
+			delete FirstNode;
+		}
+	}
+
 
 	void PrintList()
 	{

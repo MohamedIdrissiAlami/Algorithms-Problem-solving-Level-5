@@ -15,8 +15,8 @@ int main()
 
 	cout << "\nNumber of items in the linked list = " << MyList.Size();
 
-	cout << "\nafter executing clear : ";
-	MyList.Clear();
+	cout << "\nafter executing reverse : ";
+	MyList.Reverse();
 	MyList.PrintList();
 
 

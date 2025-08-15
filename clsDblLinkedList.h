@@ -157,5 +157,22 @@ public:
 		while (_Size > 0)
 			DeleteLastNode();
 	}
+
+	void Reverse()
+	{
+		Node* Current = Head;
+		Node* temp = nullptr;
+		while (Current != nullptr)
+		{
+			temp = Current->Prev;
+			Current->Prev = Current->Next;
+			Current->Next = temp;
+			Current = Current->Prev;
+		}
+		if (temp != nullptr)
+		{
+			Head = temp->Prev;
+		}
+	}
 };
 

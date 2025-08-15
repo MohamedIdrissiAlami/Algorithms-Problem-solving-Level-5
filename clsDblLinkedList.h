@@ -26,6 +26,26 @@ public:
 		Head = NewNode;
 	}
 
+	void InsertAtEnd(T Value)
+	{
+		Node* NewNode = new Node();
+		NewNode->Value = Value;
+		NewNode->Next = nullptr;
+		if (Head == nullptr)
+		{
+			NewNode->Prev = nullptr;
+			Head = NewNode;
+			return;
+		}
+		Node* LastNode = Head;
+		while (LastNode->Next != nullptr)
+		{
+			LastNode = LastNode->Next;
+		}
+		LastNode->Next = NewNode;
+		NewNode->Prev = LastNode;
+	}
+
 	void PrintList()
 	{
 		Node* Current = Head;

@@ -24,7 +24,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="clsDblLinkedList.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\DS</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

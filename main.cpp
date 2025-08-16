@@ -1,26 +1,24 @@
-#include "clsDblLinkedList.h"
+#include "clsMyQueue.h"
 
 int main()
 {
-	clsDblLinkedList<int> MyList;
-	MyList.InsertAtBeginning(5);
-	MyList.InsertAtBeginning(4);
-	MyList.InsertAtBeginning(3);
-	MyList.InsertAtBeginning(2);
-	MyList.InsertAtBeginning(1);
-	MyList.InsertAtEnd(600);
+	clsMyQueue<int> MyQueue;
+	MyQueue.Push(10);
+	MyQueue.Push(20);
+	MyQueue.Push(30);
+	MyQueue.Push(40);
+	MyQueue.Push(50);
 
-	cout << "\nLinked list content : \n";
-	MyList.PrintList();
+	cout << "\nQueue : ";
+	MyQueue.Print();
 
-	cout << "\nNumber of items in the linked list = " << MyList.Size();
+	cout << "\nQueue Size : " << MyQueue.Size();
+	cout << "\nQueue Front : " << MyQueue.Front();
+	cout << "\nQueue Back :  " << MyQueue.Back();
 
-	cout << "\nafter inserting \"500\" after node  with index 1 : ";
-	MyList.InsertAfter(1, 500);
-
-	cout << "\nNumber of items in the linked list = " << MyList.Size();
-	cout << "\nLinked list content : \n";
-	MyList.PrintList();
+	MyQueue.Pop();
+	cout << "\n\nQueue after Pop() : ";
+	MyQueue.Print();
 
 	system("pause>0");
 	return 0;

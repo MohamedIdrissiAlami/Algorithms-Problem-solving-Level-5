@@ -199,5 +199,17 @@ public:
 		else
 			return NULL;
 	}
+
+	bool UpdateItem(short Index, T NewValue)
+	{
+		Node* ItemNode = GetNode(Index);
+		if (ItemNode != nullptr)
+		{
+			ItemNode->Value = NewValue;
+			return true;
+		}
+		else
+			return  false;
+	}
 };
 

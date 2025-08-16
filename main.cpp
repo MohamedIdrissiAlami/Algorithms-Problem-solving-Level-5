@@ -15,8 +15,9 @@ int main()
 
 	cout << "\nNumber of items in the linked list = " << MyList.Size();
 
-	cout << "\nItem (2) value is : " << MyList.GetItem(2);
-
+	cout << "\nafter updating item (2) : ";
+	MyList.UpdateItem(2, 500);
+	MyList.PrintList();
 
 	system("pause>0");
 	return 0;

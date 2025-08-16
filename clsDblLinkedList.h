@@ -191,5 +191,13 @@ public:
 		}
 		return nullptr;
 	}
+	T GetItem(short Index)
+	{
+		Node* ItemNode = GetNode(Index);
+		if (ItemNode != nullptr)
+			return ItemNode->Value;
+		else
+			return NULL;
+	}
 };
 

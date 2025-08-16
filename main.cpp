@@ -15,11 +15,7 @@ int main()
 
 	cout << "\nNumber of items in the linked list = " << MyList.Size();
 
-	clsDblLinkedList<int>::Node* N1 = MyList.GetNode(5);
-	if (N1 != nullptr)
-	{
-		cout << "\nitem value is : " << N1->Value;
-	}
+	cout << "\nItem (2) value is : " << MyList.GetItem(2);
 
 
 	system("pause>0");

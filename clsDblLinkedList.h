@@ -211,5 +211,17 @@ public:
 		else
 			return  false;
 	}
+
+	bool InsertAfter(short Index, T Value)
+	{
+		Node* Current = GetNode(Index);
+		if (Current != nullptr)
+		{
+			InsertAfter(Current, Value);
+			return true;
+		}
+		else
+			return false;
+	}
 };
 

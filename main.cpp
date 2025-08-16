@@ -15,8 +15,11 @@ int main()
 
 	cout << "\nNumber of items in the linked list = " << MyList.Size();
 
-	cout << "\nafter updating item (2) : ";
-	MyList.UpdateItem(2, 500);
+	cout << "\nafter inserting \"500\" after node  with index 1 : ";
+	MyList.InsertAfter(1, 500);
+
+	cout << "\nNumber of items in the linked list = " << MyList.Size();
+	cout << "\nLinked list content : \n";
 	MyList.PrintList();
 
 	system("pause>0");

@@ -38,15 +38,18 @@ public:
 		{
 			NewNode->Prev = nullptr;
 			Head = NewNode;
-			return;
+			
 		}
-		Node* LastNode = Head;
-		while (LastNode->Next != nullptr)
+		else
 		{
-			LastNode = LastNode->Next;
+			Node* LastNode = Head;
+			while (LastNode->Next != nullptr)
+			{
+				LastNode = LastNode->Next;
+			}
+			LastNode->Next = NewNode;
+			NewNode->Prev = LastNode;
 		}
-		LastNode->Next = NewNode;
-		NewNode->Prev = LastNode;
 		++_Size;
 
 	}

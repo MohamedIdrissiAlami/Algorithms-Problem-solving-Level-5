@@ -48,6 +48,11 @@ int main()
 	cout << "\n\nQueue after inserting  2000 at back : ";
 	MyQueue.Print();
 
+	//Extension #7 :
+	MyQueue.Clear();
+	cout << "\n\nQueue after clear() : \n";
+	MyQueue.Print();
+
 	system("pause>0");
 	return 0;
 }

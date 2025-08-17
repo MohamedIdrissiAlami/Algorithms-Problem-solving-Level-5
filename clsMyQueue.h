@@ -37,7 +37,7 @@ public :
 		 return _MyList.IsEmpty();
 	 }
 
-	 T GetItem(short Index)
+	 T GetItem(int Index)
 	 {
 		 return _MyList.GetItem(Index);
 	 }
@@ -47,12 +47,12 @@ public :
 		 _MyList.Reverse(); 
 	 }
 
-	 void UpdateItem(short Index, T NewValue)
+	 void UpdateItem(int Index, T NewValue)
 	 {
 		 _MyList.UpdateItem(Index, NewValue);
 	 }
 
-	 void InsertAfter(short Index, T Value)
+	 void InsertAfter(int Index, T Value)
 	 {
 		 _MyList.InsertAfter(Index, Value);
 	 }
@@ -65,5 +65,10 @@ public :
 	 void InsertAtBack(T NewValue)
 	 {
 		 _MyList.InsertAtEnd(NewValue);
+	 }
+
+	 void Clear()
+	 {
+		 _MyList.Clear();
 	 }
 };

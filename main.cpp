@@ -23,6 +23,11 @@ int main()
 	//Extension #1 : 
 	cout << "\n\n item(2) : " << MyQueue.GetItem(2);
 
+	//Extension #2 : 
+	MyQueue.Reverse();
+	cout << "\n\nQueue after reverse() : \n";
+	MyQueue.Print();
+
 	system("pause>0");
 	return 0;
 }

@@ -38,6 +38,10 @@ int main()
 	cout << "\n\nQueue after inserting  800 after Item(2) : \n";
 	MyQueue.Print();
 
+	//Extension #5 : 
+	MyQueue.InsertAtFront(1000);
+	cout << "\n\nQueue after inserting  1000 at front : \n";
+	MyQueue.Print();
 
 	system("pause>0");
 	return 0;

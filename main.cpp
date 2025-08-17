@@ -33,6 +33,11 @@ int main()
 	cout << "\n\nQueue after updating  Item(2) to  600 : \n";
 	MyQueue.Print();
 
+	//Extension #4 : 
+	MyQueue.InsertAfter(2, 800);
+	cout << "\n\nQueue after inserting  800 after Item(2) : \n";
+	MyQueue.Print();
+
 
 	system("pause>0");
 	return 0;

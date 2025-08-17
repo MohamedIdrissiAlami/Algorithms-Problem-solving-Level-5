@@ -52,6 +52,9 @@ public :
 		 _MyList.UpdateItem(Index, NewValue);
 	 }
 
-
+	 void InsertAfter(short Index, T Value)
+	 {
+		 _MyList.InsertAfter(Index, Value);
+	 }
 
 };

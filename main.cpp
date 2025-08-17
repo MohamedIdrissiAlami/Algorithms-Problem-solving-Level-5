@@ -28,6 +28,12 @@ int main()
 	cout << "\n\nQueue after reverse() : \n";
 	MyQueue.Print();
 
+	//Extension #3 : 
+	MyQueue.UpdateItem(2, 600);
+	cout << "\n\nQueue after updating  Item(2) to  600 : \n";
+	MyQueue.Print();
+
+
 	system("pause>0");
 	return 0;
 }

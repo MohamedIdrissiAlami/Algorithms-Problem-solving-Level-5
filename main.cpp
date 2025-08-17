@@ -43,6 +43,11 @@ int main()
 	cout << "\n\nQueue after inserting  1000 at front : \n";
 	MyQueue.Print();
 
+	//Extension #6 :
+	MyQueue.InsertAtBack(2000);
+	cout << "\n\nQueue after inserting  2000 at back : ";
+	MyQueue.Print();
+
 	system("pause>0");
 	return 0;
 }

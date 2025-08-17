@@ -37,4 +37,9 @@ public :
 		 return _MyList.IsEmpty();
 	 }
 
+	 T GetItem(short Index)
+	 {
+		 return _MyList.GetItem(Index);
+	 }
+
 };

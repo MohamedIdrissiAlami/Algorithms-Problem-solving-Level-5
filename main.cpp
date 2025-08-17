@@ -9,7 +9,7 @@ int main()
 	MyQueue.Push(40);
 	MyQueue.Push(50);
 
-	cout << "\nQueue : ";
+	cout << "\nQueue : \n";
 	MyQueue.Print();
 
 	cout << "\nQueue Size : " << MyQueue.Size();
@@ -17,8 +17,11 @@ int main()
 	cout << "\nQueue Back :  " << MyQueue.Back();
 
 	MyQueue.Pop();
-	cout << "\n\nQueue after Pop() : ";
+	cout << "\n\nQueue after Pop() : \n";
 	MyQueue.Print();
+
+	//Extension #1 : 
+	cout << "\n\n item(2) : " << MyQueue.GetItem(2);
 
 	system("pause>0");
 	return 0;

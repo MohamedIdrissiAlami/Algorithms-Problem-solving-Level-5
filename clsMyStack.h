@@ -36,6 +36,10 @@ public :
 		_MyList.DeleteFirstNode();
 	}
 
+	T GetItem(int Index)
+	{
+		return _MyList.GetItem(Index);
+	}
 
 
 };

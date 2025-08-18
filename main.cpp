@@ -22,6 +22,9 @@ int main()
 	cout << "\n\nStack after pop() ; \n";
 	MyStack.Print();
 
+	//Extension #1:
+	cout << "\n\n Item(2) : " << MyStack.GetItem(2);
+
 	system("pause>0");
 	return 0;
 }

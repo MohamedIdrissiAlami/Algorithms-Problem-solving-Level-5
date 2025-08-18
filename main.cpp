@@ -42,12 +42,12 @@ int main()
 
 	//Extension #5 : 
 	cout << "\n\nStack after inserting 1000 at top : \n";
-	MyStack.InsertAtTop(1000);
+	MyStack.InsertAtFront(1000);
 	MyStack.Print();
 
 	//Extension #6 : 
 	cout << "\n\nstack after Inserting  2000 at bottom : \n";
-	MyStack.InsertAtBottom(2000);
+	MyStack.InsertAtBack(2000);
 	MyStack.Print();
 
 	//Extension #7 :

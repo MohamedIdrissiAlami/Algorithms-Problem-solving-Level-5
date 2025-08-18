@@ -1,74 +1,21 @@
 #pragma once
-#include "clsDblLinkedList.h"
+#include "clsMyQueue.h"
+
 template <class T>
-class clsMyStack
+class clsMyStack : public clsMyQueue<T>
 {
-protected:
-	clsDblLinkedList<T> _MyList;
-public :
-	void Push(T Value)
+public : 
+	void Push(T Item)
 	{
-		_MyList.InsertAtBeginning(Value);
+		clsMyQueue<T>::_MyList.InsertAtBeginning(Item);
 	}
-
-	void Print()
-	{
-		_MyList.PrintList();
-	}
-
-	int Size()
-	{
-		return _MyList.Size();
-	}
-
 	T Top()
 	{
-		return _MyList.GetItem(0);
+		return clsMyQueue<T>::Front();
 	}
 
 	T Bottom()
 	{
-		return _MyList.GetItem(Size() - 1);
-	}
-
-	void Pop()
-	{
-		_MyList.DeleteFirstNode();
-	}
-
-	T GetItem(int Index)
-	{
-		return _MyList.GetItem(Index);
-	}
-
-	void Reverse()
-	{
-		_MyList.Reverse();
-	}
-
-	void UpdateItem(int Index, T NewValue)
-	{
-		_MyList.UpdateItem(Index, NewValue);
-	}
-
-	void InsertAfter(int Index, T NewValue)
-	{
-		_MyList.InsertAfter(Index, NewValue);
-	}
-
-	void InsertAtTop(T NewValue)
-	{
-		_MyList.InsertAtBeginning(NewValue);
-	}
-
-	void InsertAtBottom(T NewValue)
-	{
-		_MyList.InsertAtEnd(NewValue);
-	}
-
-	void Clear()
-	{
-		_MyList.Clear();
+		return clsMyQueue<T>::Back();
 	}
 };
-

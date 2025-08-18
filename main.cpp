@@ -30,6 +30,11 @@ int main()
 	cout << "\n\nStack after Reverse() : \n";
 	MyStack.Print();
 
+	//Extension #3 : 
+	MyStack.UpdateItem(2, 600);
+	cout << "\n\nStack after updating Item(2) to 600 : \n";
+	MyStack.Print();
+
 	system("pause>0");
 	return 0;
 }

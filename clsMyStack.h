@@ -1,5 +1,42 @@
 #pragma once
+#include "clsDblLinkedList.h"
+template <class T>
 class clsMyStack
 {
+protected:
+	clsDblLinkedList<T> _MyList;
+public :
+	void Push(T Value)
+	{
+		_MyList.InsertAtBeginning(Value);
+	}
+
+	void Print()
+	{
+		_MyList.PrintList();
+	}
+
+	int Size()
+	{
+		return _MyList.Size();
+	}
+
+	T Top()
+	{
+		return _MyList.GetItem(0);
+	}
+
+	T Bottom()
+	{
+		return _MyList.GetItem(Size() - 1);
+	}
+
+	void Pop()
+	{
+		_MyList.DeleteFirstNode();
+	}
+
+
+
 };
 

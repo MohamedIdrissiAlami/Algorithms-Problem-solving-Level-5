@@ -60,5 +60,10 @@ public :
 	{
 		_MyList.InsertAtBeginning(NewValue);
 	}
+
+	void InsertAtBottom(T NewValue)
+	{
+		_MyList.InsertAtEnd(NewValue);
+	}
 };
 

@@ -41,6 +41,10 @@ public :
 		return _MyList.GetItem(Index);
 	}
 
+	void Reverse()
+	{
+		_MyList.Reverse();
+	}
 
 };
 

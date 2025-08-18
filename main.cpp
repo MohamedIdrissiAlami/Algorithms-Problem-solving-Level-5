@@ -40,6 +40,10 @@ int main()
 	cout << "\n\nStack after Inserting 800 after Item(2) : \n";
 	MyStack.Print();
 
+	//Extension #5 : 
+	cout << "\n\nStack after inserting 1000 at top : \n";
+	MyStack.InsertAtTop(1000);
+	MyStack.Print();
 	system("pause>0");
 	return 0;
 }

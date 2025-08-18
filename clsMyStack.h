@@ -55,5 +55,10 @@ public :
 	{
 		_MyList.InsertAfter(Index, NewValue);
 	}
+
+	void InsertAtTop(T NewValue)
+	{
+		_MyList.InsertAtBeginning(NewValue);
+	}
 };
 

@@ -35,6 +35,11 @@ int main()
 	cout << "\n\nStack after updating Item(2) to 600 : \n";
 	MyStack.Print();
 
+	//Extension #4 : 
+	MyStack.InsertAfter(2, 800);
+	cout << "\n\nStack after Inserting 800 after Item(2) : \n";
+	MyStack.Print();
+
 	system("pause>0");
 	return 0;
 }

@@ -65,5 +65,10 @@ public :
 	{
 		_MyList.InsertAtEnd(NewValue);
 	}
+
+	void Clear()
+	{
+		_MyList.Clear();
+	}
 };
 

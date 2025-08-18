@@ -50,6 +50,11 @@ int main()
 	MyStack.InsertAtBottom(2000);
 	MyStack.Print();
 
+	//Extension #7 :
+	MyStack.Clear();
+	cout << "\n\nstack after Clear() : ";
+	MyStack.Print();
+
 	system("pause>0");
 	return 0;
 }

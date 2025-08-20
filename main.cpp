@@ -1,59 +1,22 @@
-#include "clsMyStack.h"
+#include "clsDynamicArray.h"
+using namespace std;
 
 int main()
 {
-	clsMyStack <int> MyStack;
+	clsDynamicArray<int> MyDynamicArray(10);
 
-	MyStack.Push(10);
-	MyStack.Push(20);
-	MyStack.Push(30);
-	MyStack.Push(40);
-	MyStack.Push(50);
+	MyDynamicArray.SetItem(0, 10);
+	MyDynamicArray.SetItem(1, 20);
+	MyDynamicArray.SetItem(2, 30);
+	MyDynamicArray.SetItem(3, 40);
+	MyDynamicArray.SetItem(4, 50);
 
-	cout << "\nstack : \n";
-	MyStack.Print();
+	cout << "\nIs Empty ? " << MyDynamicArray.IsEmpty();
+	cout << "\nArray Size : " << MyDynamicArray.Size() << endl;
 
-	cout << "\nStack size : " << MyStack.Size();
-	cout << "\nstack Top : " << MyStack.Top();
-	cout << "\nstack bottom : " << MyStack.Bottom();
+	cout << "\nArray items : \n";
+	MyDynamicArray.PrintList();
 
-	MyStack.Pop();
-
-	cout << "\n\nStack after pop() ; \n";
-	MyStack.Print();
-
-	//Extension #1:
-	cout << "\n\n Item(2) : " << MyStack.GetItem(2);
-
-	//Extension #2 : 
-	MyStack.Reverse();
-	cout << "\n\nStack after Reverse() : \n";
-	MyStack.Print();
-
-	//Extension #3 : 
-	MyStack.UpdateItem(2, 600);
-	cout << "\n\nStack after updating Item(2) to 600 : \n";
-	MyStack.Print();
-
-	//Extension #4 : 
-	MyStack.InsertAfter(2, 800);
-	cout << "\n\nStack after Inserting 800 after Item(2) : \n";
-	MyStack.Print();
-
-	//Extension #5 : 
-	cout << "\n\nStack after inserting 1000 at top : \n";
-	MyStack.InsertAtFront(1000);
-	MyStack.Print();
-
-	//Extension #6 : 
-	cout << "\n\nstack after Inserting  2000 at bottom : \n";
-	MyStack.InsertAtBack(2000);
-	MyStack.Print();
-
-	//Extension #7 :
-	MyStack.Clear();
-	cout << "\n\nstack after Clear() : ";
-	MyStack.Print();
 
 	system("pause>0");
 	return 0;

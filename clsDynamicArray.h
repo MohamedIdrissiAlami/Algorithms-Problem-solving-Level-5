@@ -83,4 +83,17 @@ public:
 		OriginalArray = _TempArray;
 		_Size = 0;
 	}
+
+	void Reverse()
+	{
+		_TempArray = new T[_Size];
+		//copy original array items ot temporary array in reverse order
+		for (int i=0;i<_Size;i++)
+		{
+			_TempArray[i] = OriginalArray[_Size - 1 - i];
+		}
+		//cleanup memory and update references :
+		delete[]OriginalArray;
+		OriginalArray = _TempArray;
+	}
 };

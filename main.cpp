@@ -18,6 +18,9 @@ int main()
 
 	cout << "\nItem(2) : " << MyDynamicArray.GetItem(2) << "\n";
 
+	MyDynamicArray.Clear();
+	cout << "\nArray items after clear :  \n";
+	MyDynamicArray.PrintList();
 
 	system("pause>0");
 	return 0;

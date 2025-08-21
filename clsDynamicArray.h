@@ -75,4 +75,12 @@ public:
 			return NULL;
 		return OriginalArray[Index];
 	}
+
+	void Clear()
+	{
+		delete[]OriginalArray;
+		_TempArray = new T[0];
+		OriginalArray = _TempArray;
+		_Size = 0;
+	}
 };

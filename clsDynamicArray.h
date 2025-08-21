@@ -9,7 +9,8 @@ protected:
 	int _Size = 0;
 	T* _TempArray;
 public:
-	T* OriginalArray = nullptr;
+	// TODO: Refactor to use local temp variables later
+	T* _TempArray; // Currently used in Resize/Delete methods
 	clsDynamicArray(int Size = 0)
 	{
 		if (Size < 0)
@@ -92,8 +93,33 @@ public:
 		{
 			_TempArray[i] = OriginalArray[_Size - 1 - i];
 		}
-		//cleanup memory and update references :
+		//cleanup old array and update references :
 		delete[]OriginalArray;
 		OriginalArray = _TempArray;
 	}
+
+	bool DeleteItemAt(int Index)
+	{
+		if (Index < 0 || Index >= _Size)
+			return false;
+		_TempArray = new T[_Size - 1];
+		//copy OriginalArray items into _TempArray except for the requested item : 
+		for (int i = 0; i < Index; i++)
+		{
+			_TempArray[i] = OriginalArray[i];
+		}
+		for (int i = Index + 1; i < _Size; i++)
+		{
+			_TempArray[i - 1] = OriginalArray[i];
+		}
+
+		//clean up old array and change references
+		delete[]OriginalArray;
+		OriginalArray = _TempArray;
+		--_Size;
+		return true;
+
+	}
+
+
 };

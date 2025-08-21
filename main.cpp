@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-	clsDynamicArray<int> MyDynamicArray(10);
+	clsDynamicArray<int> MyDynamicArray(5);
 
 	MyDynamicArray.SetItem(0, 10);
 	MyDynamicArray.SetItem(1, 20);
@@ -17,6 +17,16 @@ int main()
 	cout << "\nArray items : \n";
 	MyDynamicArray.PrintList();
 
+	MyDynamicArray.Resize(2);
+	cout << "\nArray Size : " << MyDynamicArray.Size();
+	cout << "\narray items after resize to 2 : \n";
+	MyDynamicArray.PrintList();
+	
+	MyDynamicArray.Resize(10);
+	cout << "\nArray Size : " << MyDynamicArray.Size();
+	cout << "\narray items after resize to 10 : \n";
+	MyDynamicArray.PrintList();
+	
 
 	system("pause>0");
 	return 0;

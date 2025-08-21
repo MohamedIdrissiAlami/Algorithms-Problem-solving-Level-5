@@ -7,7 +7,7 @@ class clsDynamicArray
 {
 protected:
 	int _Size = 0;
-
+	T* _TempArray;
 public:
 	T* OriginalArray;
 	clsDynamicArray(int Size = 0)
@@ -42,9 +42,30 @@ public:
 
 	void PrintList()
 	{
-		for (short i = 0; i < _Size; i++)
+		for (int i = 0; i < _Size; i++)
 			cout << OriginalArray[i] << " ";
 		cout << "\n";
 	}
+	void Resize(int NewSize)
+	{
+		if (NewSize < 0) NewSize = 0;
 
+		//create new array with the requested size : 
+		_TempArray = new T[NewSize];
+		//copy elements from older array to _TempArray: 
+		int ElementsToCopy = (_Size < NewSize) ? _Size : NewSize;
+		for (int i = 0; i < ElementsToCopy; i++)
+		{
+			_TempArray[i] = OriginalArray[i];
+		}
+		//initialize new Elements if expanding
+		for (int i = _Size; i < NewSize; i++)
+		{
+			_TempArray[i] = T();//default initialization
+		}
+		//Clean up old  array and update references : 
+		delete[]OriginalArray;
+		OriginalArray = _TempArray;
+		_Size = NewSize;
+	}
 };

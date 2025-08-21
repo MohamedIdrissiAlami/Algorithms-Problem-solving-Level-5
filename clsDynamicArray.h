@@ -9,7 +9,7 @@ protected:
 	int _Size = 0;
 	T* _TempArray;
 public:
-	T* OriginalArray;
+	T* OriginalArray = nullptr;
 	clsDynamicArray(int Size = 0)
 	{
 		if (Size < 0)
@@ -67,5 +67,12 @@ public:
 		delete[]OriginalArray;
 		OriginalArray = _TempArray;
 		_Size = NewSize;
+	}
+
+	T GetItem(int Index)
+	{
+		if (Index < 0 || Index >= _Size)
+			return NULL;
+		return OriginalArray[Index];
 	}
 };

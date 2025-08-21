@@ -1,5 +1,4 @@
 #include "clsDynamicArray.h"
-using namespace std;
 
 int main()
 {
@@ -17,16 +16,8 @@ int main()
 	cout << "\nArray items : \n";
 	MyDynamicArray.PrintList();
 
-	MyDynamicArray.Resize(2);
-	cout << "\nArray Size : " << MyDynamicArray.Size();
-	cout << "\narray items after resize to 2 : \n";
-	MyDynamicArray.PrintList();
-	
-	MyDynamicArray.Resize(10);
-	cout << "\nArray Size : " << MyDynamicArray.Size();
-	cout << "\narray items after resize to 10 : \n";
-	MyDynamicArray.PrintList();
-	
+	cout << "\nItem(2) : " << MyDynamicArray.GetItem(2) << "\n";
+
 
 	system("pause>0");
 	return 0;

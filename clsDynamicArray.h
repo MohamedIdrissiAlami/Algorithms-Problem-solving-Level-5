@@ -130,4 +130,15 @@ public:
 	{
 		return DeleteItemAt(_Size - 1);
 	}
+	
+	int Find(T Value)
+	{
+		for (int i = 0; i < _Size; i++)
+		{
+			if (OriginalArray[i] == Value)
+				return i;
+		}
+		//if you reached here this means that the item you're looking for doesn't exist
+		return -1;
+	}
 };

@@ -146,4 +146,31 @@ public:
 	{
 		return DeleteItemAt(Find(Value));
 	}
+
+	bool InsertAt(int Index, T NewValue)
+	{
+		if (Index < 0 || Index >= _Size)
+			return false;
+		_TempArray = new T[_Size + 1];
+
+		//copy all before index
+		for (int i = 0; i < Index; i++)
+		{
+			_TempArray[i] = OriginalArray[i];
+		}
+
+		_TempArray[Index] = NewValue;
+
+		//copy all after index
+		for (int i = Index; i < _Size; i++)
+		{
+			_TempArray[i + 1] = OriginalArray[i];
+		}
+		
+		//clean up old array and update references :
+		delete[]OriginalArray;
+		OriginalArray = _TempArray;
+		++_Size;
+		return true;
+	}
 };

@@ -15,16 +15,10 @@ int main()
 
 	cout << "\nArray items : \n";
 	MyDynamicArray.PrintList();
-
-	int Index = MyDynamicArray.Find(30);
-	if (Index == -1)
-		cout << "\nItem was nto Found :-(\n";
-	else
-		cout << "\n30 is Found at Index : " << Index;
-
-	MyDynamicArray.DeleteItem(30);
-	cout << "\n\nArray Items after deleting 30 : ";
-	cout << "\nArray Size : " << MyDynamicArray.Size() << endl;
+	
+	MyDynamicArray.InsertAt(2, 500);
+	cout << "\n\narray after insert 500 at index 2 : ";
+	cout << "\nArray Size : " << MyDynamicArray.Size() << "\n";
 	MyDynamicArray.PrintList();
 
 	system("pause>0");

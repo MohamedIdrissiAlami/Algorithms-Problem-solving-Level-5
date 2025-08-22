@@ -7,10 +7,10 @@ class clsDynamicArray
 {
 protected:
 	int _Size = 0;
-	T* _TempArray;
-public:
 	// TODO: Refactor to use local temp variables later
 	T* _TempArray; // Currently used in Resize/Delete methods
+public:
+	T* OriginalArray;
 	clsDynamicArray(int Size = 0)
 	{
 		if (Size < 0)
@@ -121,5 +121,8 @@ public:
 
 	}
 
-
+	bool DeleteFirstItem()
+	{
+		return DeleteItemAt(0);
+	}
 };

@@ -125,4 +125,9 @@ public:
 	{
 		return DeleteItemAt(0);
 	}
+
+	bool DeleteLastItem()
+	{
+		return DeleteItemAt(_Size - 1);
+	}
 };

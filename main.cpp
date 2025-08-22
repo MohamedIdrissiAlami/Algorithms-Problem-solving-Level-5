@@ -21,6 +21,11 @@ int main()
 	cout << "\nArray Size : " << MyDynamicArray.Size() << "\n";
 	MyDynamicArray.PrintList();
 
+	MyDynamicArray.DeleteLastItem();
+	cout << "\nArray Items after deleting Last Item : \n";
+	cout << "\nArray Size : " << MyDynamicArray.Size() << endl;
+	MyDynamicArray.PrintList();
+
 	system("pause>0");
 	return 0;
 }

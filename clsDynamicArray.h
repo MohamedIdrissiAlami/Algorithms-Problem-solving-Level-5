@@ -179,6 +179,11 @@ public:
 		return InsertAt(0, NewValue);
 	}
 
+	bool InsertBefore(int Index, T NewValue)
+	{
+		return InsertAt(Index, NewValue);
+	}
+
 	bool InsertAtEnd(T NewValue)
 	{
 		return InsertAt(_Size, NewValue);

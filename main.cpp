@@ -21,6 +21,11 @@ int main()
 	cout << "\nArray Size : " << MyDynamicArray.Size() << "\n";
 	MyDynamicArray.PrintList();
 
+	MyDynamicArray.InsertAtEnd(800);
+	cout << "\n\nArray after insert 800 at End : ";
+	cout << "\nArray Size : " << MyDynamicArray.Size() << "\n";
+	MyDynamicArray.PrintList();
+
 	system("pause>0");
 	return 0;
 }

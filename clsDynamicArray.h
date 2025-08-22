@@ -149,7 +149,7 @@ public:
 
 	bool InsertAt(int Index, T NewValue)
 	{
-		if (Index < 0 || Index >= _Size)
+		if (Index < 0 || Index > _Size)
 			return false;
 		_TempArray = new T[_Size + 1];
 
@@ -177,5 +177,10 @@ public:
 	bool InsertAtBeginning(T NewValue)
 	{
 		return InsertAt(0, NewValue);
+	}
+
+	bool InsertAtEnd(T NewValue)
+	{
+		return InsertAt(_Size, NewValue);
 	}
 };

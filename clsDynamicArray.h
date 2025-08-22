@@ -173,4 +173,9 @@ public:
 		++_Size;
 		return true;
 	}
+
+	bool InsertAtBeginning(T NewValue)
+	{
+		return InsertAt(0, NewValue);
+	}
 };

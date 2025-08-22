@@ -141,4 +141,9 @@ public:
 		//if you reached here this means that the item you're looking for doesn't exist
 		return -1;
 	}
+
+	bool DeleteItem(T Value)
+	{
+		return DeleteItemAt(Find(Value));
+	}
 };

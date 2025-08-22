@@ -22,6 +22,11 @@ int main()
 	else
 		cout << "\n30 is Found at Index : " << Index;
 
+	MyDynamicArray.DeleteItem(30);
+	cout << "\n\nArray Items after deleting 30 : ";
+	cout << "\nArray Size : " << MyDynamicArray.Size() << endl;
+	MyDynamicArray.PrintList();
+
 	system("pause>0");
 	return 0;
 }

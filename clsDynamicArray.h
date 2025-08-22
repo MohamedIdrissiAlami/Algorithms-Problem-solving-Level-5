@@ -7,8 +7,6 @@ class clsDynamicArray
 {
 protected:
 	int _Size = 0;
-	// TODO: Refactor to use local temp variables later
-	T* _TempArray; // Currently used in Resize/Delete methods
 public:
 	T* OriginalArray;
 	clsDynamicArray(int Size = 0)
@@ -47,26 +45,27 @@ public:
 			cout << OriginalArray[i] << " ";
 		cout << "\n";
 	}
+
 	void Resize(int NewSize)
 	{
 		if (NewSize < 0) NewSize = 0;
 
 		//create new array with the requested size : 
-		_TempArray = new T[NewSize];
-		//copy elements from older array to _TempArray: 
+		T*TempArray = new T[NewSize];
+		//copy elements from older array to TempArray: 
 		int ElementsToCopy = (_Size < NewSize) ? _Size : NewSize;
 		for (int i = 0; i < ElementsToCopy; i++)
 		{
-			_TempArray[i] = OriginalArray[i];
+			TempArray[i] = OriginalArray[i];
 		}
 		//initialize new Elements if expanding
 		for (int i = _Size; i < NewSize; i++)
 		{
-			_TempArray[i] = T();//default initialization
+			TempArray[i] = T();//default initialization
 		}
 		//Clean up old  array and update references : 
 		delete[]OriginalArray;
-		OriginalArray = _TempArray;
+		OriginalArray = TempArray;
 		_Size = NewSize;
 	}
 
@@ -80,42 +79,42 @@ public:
 	void Clear()
 	{
 		delete[]OriginalArray;
-		_TempArray = new T[0];
-		OriginalArray = _TempArray;
+		T*TempArray = new T[0];
+		OriginalArray = TempArray;
 		_Size = 0;
 	}
 
 	void Reverse()
 	{
-		_TempArray = new T[_Size];
+		T*TempArray = new T[_Size];
 		//copy original array items ot temporary array in reverse order
 		for (int i=0;i<_Size;i++)
 		{
-			_TempArray[i] = OriginalArray[_Size - 1 - i];
+			TempArray[i] = OriginalArray[_Size - 1 - i];
 		}
 		//cleanup old array and update references :
 		delete[]OriginalArray;
-		OriginalArray = _TempArray;
+		OriginalArray = TempArray;
 	}
 
 	bool DeleteItemAt(int Index)
 	{
 		if (Index < 0 || Index >= _Size)
 			return false;
-		_TempArray = new T[_Size - 1];
-		//copy OriginalArray items into _TempArray except for the requested item : 
+		T*TempArray = new T[_Size - 1];
+		//copy OriginalArray items into TempArray except for the requested item : 
 		for (int i = 0; i < Index; i++)
 		{
-			_TempArray[i] = OriginalArray[i];
+			TempArray[i] = OriginalArray[i];
 		}
 		for (int i = Index + 1; i < _Size; i++)
 		{
-			_TempArray[i - 1] = OriginalArray[i];
+			TempArray[i - 1] = OriginalArray[i];
 		}
 
 		//clean up old array and change references
 		delete[]OriginalArray;
-		OriginalArray = _TempArray;
+		OriginalArray = TempArray;
 		--_Size;
 		return true;
 
@@ -151,25 +150,25 @@ public:
 	{
 		if (Index < 0 || Index > _Size)
 			return false;
-		_TempArray = new T[_Size + 1];
+		T*TempArray = new T[_Size + 1];
 
 		//copy all before index
 		for (int i = 0; i < Index; i++)
 		{
-			_TempArray[i] = OriginalArray[i];
+			TempArray[i] = OriginalArray[i];
 		}
 
-		_TempArray[Index] = NewValue;
+		TempArray[Index] = NewValue;
 
 		//copy all after index
 		for (int i = Index; i < _Size; i++)
 		{
-			_TempArray[i + 1] = OriginalArray[i];
+			TempArray[i + 1] = OriginalArray[i];
 		}
 		
 		//clean up old array and update references :
 		delete[]OriginalArray;
-		OriginalArray = _TempArray;
+		OriginalArray = TempArray;
 		++_Size;
 		return true;
 	}

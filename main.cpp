@@ -1,58 +1,69 @@
-#include "clsMyQueueArr.h"
+//ProgrammingAdvices.com
+//Mohammed Abu-Hadhoud
+
+#include <iostream>
+#include "clsMyStackArr.h"
+
+using namespace std;
 
 int main()
 {
-	clsMyQueueArr<int> MyQueue;
-	MyQueue.Push(10);
-	MyQueue.Push(20);
-	MyQueue.Push(30);
-	MyQueue.Push(40);
-	MyQueue.Push(50);
 
-	cout << "\nQueue : \n";
-	MyQueue.Print();
+    clsMyStackArr<int> MyStack;
 
-	cout << "\nQueue Size : " << MyQueue.Size();
-	cout << "\nQueue Front : " << MyQueue.Front();
-	cout << "\nQueue Back :  " << MyQueue.Back();
+    MyStack.Push(10);
+    MyStack.Push(20);
+    MyStack.Push(30);
+    MyStack.Push(40);
+    MyStack.Push(50);
 
-	MyQueue.Pop();
-	cout << "\n\nQueue after Pop() : \n";
-	MyQueue.Print();
 
-	//Extension #1 : 
-	cout << "\n\n item(2) : " << MyQueue.GetItem(2);
+    cout << "\nStack: \n";
+    MyStack.Print();
 
-	//Extension #2 : 
-	MyQueue.Reverse();
-	cout << "\n\nQueue after reverse() : \n";
-	MyQueue.Print();
+    cout << "\nStack Size: " << MyStack.Size();
+    cout << "\nStack Top: " << MyStack.Top();
+    cout << "\nStack Bottom: " << MyStack.Bottom();
 
-	//Extension #3 : 
-	MyQueue.UpdateItem(2, 600);
-	cout << "\n\nQueue after updating  Item(2) to  600 : \n";
-	MyQueue.Print();
+    MyStack.Pop();
 
-	//Extension #4 : 
-	MyQueue.InsertAfter(2, 800);
-	cout << "\n\nQueue after inserting  800 after Item(2) : \n";
-	MyQueue.Print();
+    cout << "\n\nStack after pop() : \n";
+    MyStack.Print();
 
-	//Extension #5 : 
-	MyQueue.InsertAtFront(1000);
-	cout << "\n\nQueue after inserting  1000 at front : \n";
-	MyQueue.Print();
+    //Extension #1
+    cout << "\n\n Item(2) : " << MyStack.GetItem(2);
 
-	//Extension #6 :
-	MyQueue.InsertAtBack(2000);
-	cout << "\n\nQueue after inserting  2000 at back : \n";
-	MyQueue.Print();
+    //Extension #2
+    MyStack.Reverse();
+    cout << "\n\nStack after reverse() : \n";
+    MyStack.Print();
 
-	//Extension #7 :
-	MyQueue.Clear();
-	cout << "\n\nQueue after clear() : \n";
-	MyQueue.Print();
+    //Extension #3
+    MyStack.UpdateItem(2, 600);
+    cout << "\n\nStack after updating Item(2) to 600 : \n";
+    MyStack.Print();
 
-	system("pause>0");
-	return 0;
+    //Extension #4
+    MyStack.InsertAfter(2, 800);
+    cout << "\n\nStack after Inserting 800 after Item(2) : \n";
+    MyStack.Print();
+
+
+    //Extension #5
+    MyStack.InsertAtFront(1000);
+    cout << "\n\nStack after Inserting 1000 at top: \n";
+    MyStack.Print();
+
+    //Extension #6
+    MyStack.InsertAtBack(2000);
+    cout << "\n\nStack after Inserting 2000 at bottom: \n";
+    MyStack.Print();
+
+    //Extension #7
+    MyStack.Clear();
+    cout << "\n\nStack after Clear(): \n";
+    MyStack.Print();
+
+    system("pause>0");
+
 }

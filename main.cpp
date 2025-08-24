@@ -1,69 +1,45 @@
-//ProgrammingAdvices.com
-//Mohammed Abu-Hadhoud
-
-#include <iostream>
-#include "clsMyStackArr.h"
-
-using namespace std;
+#include "clsMyString.h"
 
 int main()
 {
+	cout << "\n\n\t\t\t\t\t\t Undo/Redo Project\n\n";
 
-    clsMyStackArr<int> MyStack;
+	clsMyString S1;
+	cout << "\nS1 = " << S1.Value ;
 
-    MyStack.Push(10);
-    MyStack.Push(20);
-    MyStack.Push(30);
-    MyStack.Push(40);
-    MyStack.Push(50);
+	S1.Value = "Mohamed";
+	cout << "\nS1 = " << S1.Value;
 
+	S1.Value = "Mohamed2";
+	cout << "\nS1 = " << S1.Value;
 
-    cout << "\nStack: \n";
-    MyStack.Print();
+	S1.Value = "Mohamed3";
+	cout << "\nS1 = " << S1.Value;
 
-    cout << "\nStack Size: " << MyStack.Size();
-    cout << "\nStack Top: " << MyStack.Top();
-    cout << "\nStack Bottom: " << MyStack.Bottom();
+	cout << "\n\nUndo : ";
+	cout << "\n__________\n";
 
-    MyStack.Pop();
+	S1.Undo();
+	cout << "\nS1 after undo = " << S1.Value<<endl;
+	
+	S1.Undo();
+	cout << "\nS1 after undo = " << S1.Value << endl;
 
-    cout << "\n\nStack after pop() : \n";
-    MyStack.Print();
+	S1.Undo();
+	cout << "\nS1 after undo = " << S1.Value << endl;
 
-    //Extension #1
-    cout << "\n\n Item(2) : " << MyStack.GetItem(2);
+	cout << "\n\nrRedo : ";
+	cout << "\n__________\n";
 
-    //Extension #2
-    MyStack.Reverse();
-    cout << "\n\nStack after reverse() : \n";
-    MyStack.Print();
+	S1.Redo();
+	cout << "\nS1 after Redo = " << S1.Value<<endl;
+	
+	S1.Redo();
+	cout << "\nS1 after Redo = " << S1.Value << endl;
 
-    //Extension #3
-    MyStack.UpdateItem(2, 600);
-    cout << "\n\nStack after updating Item(2) to 600 : \n";
-    MyStack.Print();
+	S1.Redo();
+	cout << "\nS1 after Redo = " << S1.Value << endl;
 
-    //Extension #4
-    MyStack.InsertAfter(2, 800);
-    cout << "\n\nStack after Inserting 800 after Item(2) : \n";
-    MyStack.Print();
-
-
-    //Extension #5
-    MyStack.InsertAtFront(1000);
-    cout << "\n\nStack after Inserting 1000 at top: \n";
-    MyStack.Print();
-
-    //Extension #6
-    MyStack.InsertAtBack(2000);
-    cout << "\n\nStack after Inserting 2000 at bottom: \n";
-    MyStack.Print();
-
-    //Extension #7
-    MyStack.Clear();
-    cout << "\n\nStack after Clear(): \n";
-    MyStack.Print();
-
-    system("pause>0");
-
+	system("pause>0");
+	return 0;
 }

@@ -200,7 +200,7 @@ public:
 		if (ItemNode != nullptr)
 			return ItemNode->Value;
 		else
-			return NULL;
+			return T();
 	}
 
 	bool UpdateItem(short Index, T NewValue)

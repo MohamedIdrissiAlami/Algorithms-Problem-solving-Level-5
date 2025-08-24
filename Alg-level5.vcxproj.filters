@@ -16,6 +16,9 @@
     <Filter Include="Header Files\DS">
       <UniqueIdentifier>{11f08b8c-317c-4778-867f-e1c173ccd90b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Undo/Redo">
+      <UniqueIdentifier>{0dbe168d-ede3-4886-9ffe-296dfccce0f3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -42,7 +45,7 @@
       <Filter>Header Files\DS</Filter>
     </ClInclude>
     <ClInclude Include="clsMyString.h">
-      <Filter>Header Files\DS</Filter>
+      <Filter>Header Files\Undo/Redo</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

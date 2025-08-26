@@ -1,44 +1,26 @@
-#include "clsMyString.h"
+#include "clsQueueLine.h"
 
 int main()
 {
-	cout << "\n\n\t\t\t\t\t\t Undo/Redo Project\n\n";
+	clsQueueLine PayBillsQueue("A0", 10);
+	clsQueueLine SubscriptionsQueue("B0", 5);
 
-	clsMyString S1;
-	cout << "\nS1 = " << S1.Value ;
+	cout<<"\nSubscription Queue info : \n";
+	SubscriptionsQueue.IssueTicket();
+	SubscriptionsQueue.IssueTicket();
+	SubscriptionsQueue.IssueTicket();
 
-	S1.Value = "Mohamed";
-	cout << "\nS1 = " << S1.Value;
+	SubscriptionsQueue.PrintInfo();
 
-	S1.Value = "Mohamed2";
-	cout << "\nS1 = " << S1.Value;
+	SubscriptionsQueue.PrintFrontToBack();
+	SubscriptionsQueue.PrintBackToFront();
 
-	S1.Value = "Mohamed3";
-	cout << "\nS1 = " << S1.Value;
+	SubscriptionsQueue.PrintAllTickets();
 
-	cout << "\n\nUndo : ";
-	cout << "\n__________\n";
+	SubscriptionsQueue.ServeNextClient();
+	cout << "\n\nSubscriptions Queue after serving one client \n";
+	SubscriptionsQueue.PrintInfo();
 
-	S1.Undo();
-	cout << "\nS1 after undo = " << S1.Value<<endl;
-	
-	S1.Undo();
-	cout << "\nS1 after undo = " << S1.Value << endl;
-
-	S1.Undo();
-	cout << "\nS1 after undo = " << S1.Value << endl;
-
-	cout << "\n\nrRedo : ";
-	cout << "\n__________\n";
-
-	S1.Redo();
-	cout << "\nS1 after Redo = " << S1.Value<<endl;
-	
-	S1.Redo();
-	cout << "\nS1 after Redo = " << S1.Value << endl;
-
-	S1.Redo();
-	cout << "\nS1 after Redo = " << S1.Value << endl;
 
 	system("pause>0");
 	return 0;
